@@ -150,6 +150,7 @@ body {
 
 .profile-page p {
   text-align: justify;
+  font-size: 13px;
 }
 
 .profile-page .btn-box {
@@ -249,7 +250,7 @@ body {
 }
 
 .workeduc-box p {
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .workeduc-content .year i {
