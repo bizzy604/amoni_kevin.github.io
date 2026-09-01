@@ -35,6 +35,18 @@ Software engineer with 6 years of experience building secure, high-availability 
 
 ## Professional Experience
 
+### The Brand Coach&trade; Network - Chief Technology Officer (Part-time)
+
+**Oct 2025 - Present | Nairobi County, Kenya | Remote**
+
+Technology leadership and engineering direction for The Brand Coach Network.
+
+### Agiza - Chief Technology Officer (Full-time)
+
+**Jun 2025 - Present | Nairobi County, Kenya | Remote**
+
+Technology leadership and engineering direction for Agiza's product.
+
 ### iWorld Afric - Full-Stack Developer
 
 **Jun 2025 - Present | Nairobi, Kenya**

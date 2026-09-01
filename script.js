@@ -4,8 +4,52 @@ const coverScreen = document.querySelector('.cover-screen');
 const openCoverButton = document.querySelector('.cover-open');
 const closeBookButton = document.querySelector('.back-profile');
 const contactButton = document.querySelector('.contact-me');
+const themeToggle = document.querySelector('.theme-toggle');
+const themeRoot = document.documentElement;
+const themeStorageKey = 'portfolio-theme';
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 let isClosingBook = false;
+
+function readStoredTheme() {
+  try {
+    return window.localStorage.getItem(themeStorageKey);
+  } catch {
+    return null;
+  }
+}
+
+const storedTheme = readStoredTheme();
+if (storedTheme === 'dark' || storedTheme === 'light') {
+  themeRoot.dataset.theme = storedTheme;
+} else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  themeRoot.dataset.theme = 'dark';
+}
+
+function updateThemeToggle() {
+  const isDark = themeRoot.dataset.theme === 'dark';
+  const icon = themeToggle?.querySelector('i');
+  const label = themeToggle?.querySelector('span');
+
+  themeToggle?.setAttribute('aria-pressed', String(isDark));
+  themeToggle?.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme');
+  if (icon) icon.className = `bx ${isDark ? 'bx-sun' : 'bx-moon'}`;
+  if (label) label.textContent = isDark ? 'Light mode' : 'Dark mode';
+  document.querySelector('meta[name="theme-color"]')?.setAttribute('content', isDark ? '#04111d' : '#071b2b');
+}
+
+if (themeToggle) {
+  updateThemeToggle();
+  themeToggle.addEventListener('click', () => {
+    const nextTheme = themeRoot.dataset.theme === 'dark' ? 'light' : 'dark';
+    themeRoot.dataset.theme = nextTheme;
+    try {
+      window.localStorage.setItem(themeStorageKey, nextTheme);
+    } catch {
+      // Theme still works for the current visit when storage is unavailable.
+    }
+    updateThemeToggle();
+  });
+}
 
 function setPageState(page, turned, index = pages.indexOf(page)) {
   page.classList.toggle('turn', turned);
@@ -113,6 +157,38 @@ if (closeBookButton) {
 }
 
 const mediaQuery = window.matchMedia('(max-width: 820px)');
+const mobileRevealTargets = [...document.querySelectorAll('.book-page, .back-cover-page')];
+let mobileRevealObserver;
+
+function setupMobileReveal() {
+  mobileRevealTargets.forEach((target) => target.classList.add('mobile-reveal-target'));
+
+  if (!mediaQuery.matches) {
+    mobileRevealObserver?.disconnect();
+    mobileRevealTargets.forEach((target) => target.classList.remove('mobile-reveal-target', 'is-visible'));
+    return;
+  }
+
+  if (reducedMotion || typeof window.IntersectionObserver !== 'function') {
+    mobileRevealTargets.forEach((target) => target.classList.add('is-visible'));
+    return;
+  }
+
+  mobileRevealObserver?.disconnect();
+  mobileRevealObserver = new window.IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) entry.target.classList.add('is-visible');
+    });
+  }, {
+    threshold: 0.12,
+    rootMargin: '0px 0px -8% 0px'
+  });
+
+  mobileRevealTargets.forEach((target) => {
+    target.classList.remove('is-visible');
+    mobileRevealObserver.observe(target);
+  });
+}
 
 function applyMobileLayout() {
   if (mediaQuery.matches) {
@@ -121,6 +197,8 @@ function applyMobileLayout() {
       page.style.zIndex = 'auto';
     });
   }
+
+  setupMobileReveal();
 }
 
 applyMobileLayout();

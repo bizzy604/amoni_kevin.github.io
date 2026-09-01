@@ -54,6 +54,8 @@ House-hunting application designed to make finding a home faster and easier. Pat
 
 ## Experience at a glance
 
+- **The Brand Coach&trade; Network:** Chief Technology Officer, part-time, leading technology work remotely from Nairobi County (Oct 2025 - Present).
+- **Agiza:** Chief Technology Officer, full-time, leading technology work remotely from Nairobi County (Jun 2025 - Present).
 - **iWorld Afric:** Full-stack development for multiple production client platforms; reduced API response time by 45% and deployment time from 45 minutes to under 8 minutes.
 - **State Department for Diaspora Affairs:** Production ownership of a government platform serving 10,000+ users; improved uptime from 94% to 99.2%.
 - **Turk Analytica:** Python data quality pipelines, ETL automation, and Power BI analytics for client reporting.

@@ -1,4 +1,4 @@
-/* A warm editorial system for an engineering portfolio */
+/* A blue editorial system for an engineering portfolio */
 
 :root {
   --ink: #1d2a39;
@@ -11,10 +11,58 @@
   --sage: #cbe8f7;
   --line: rgba(0, 168, 255, 0.18);
   --white: #ffffff;
+  --canvas: #071b2b;
+  --canvas-glow: rgba(0, 168, 255, 0.18);
+  --canvas-glow-alt: rgba(0, 180, 216, 0.12);
+  --page-wash: rgba(248, 251, 255, 0.92);
+  --surface: rgba(255, 255, 255, 0.38);
+  --surface-strong: rgba(255, 255, 255, 0.56);
+  --corner-fill: rgba(203, 232, 247, 0.35);
+  --field-placeholder: #70869a;
+  --toggle-bg: rgba(248, 251, 255, 0.94);
+  --toggle-border: rgba(0, 168, 255, 0.2);
+  --cover-ink: #f8fbff;
+  --cover-soft: rgba(255, 255, 255, 0.78);
+  --cover-highlight: #b9eaff;
+  --cover-button-bg: #f8fbff;
+  --cover-button-ink: #1d2a39;
+  --cover-button-hover: #1d2a39;
+  --featured-surface: rgba(203, 232, 247, 0.42);
   --shadow: 0 1.5rem 4rem rgba(3, 23, 38, 0.3);
   --page-shadow: 0 0 2.5rem rgba(8, 30, 45, 0.12);
   --heading: "Space Grotesk", "Segoe UI", sans-serif;
   --body: "DM Sans", "Segoe UI", sans-serif;
+}
+
+html[data-theme="dark"] {
+  --ink: #e8f4ff;
+  --ink-soft: #a7bfd2;
+  --paper: #0e2538;
+  --paper-alt: #122e45;
+  --paper-deep: #1a405a;
+  --accent: #54c8ff;
+  --accent-dark: #2caee8;
+  --sage: #1a405a;
+  --line: rgba(84, 200, 255, 0.24);
+  --canvas: #04111d;
+  --canvas-glow: rgba(0, 168, 255, 0.13);
+  --canvas-glow-alt: rgba(0, 180, 216, 0.08);
+  --page-wash: rgba(14, 37, 56, 0.92);
+  --surface: rgba(255, 255, 255, 0.07);
+  --surface-strong: rgba(255, 255, 255, 0.1);
+  --corner-fill: rgba(132, 207, 246, 0.12);
+  --field-placeholder: #83a7bf;
+  --toggle-bg: rgba(14, 37, 56, 0.94);
+  --toggle-border: rgba(84, 200, 255, 0.28);
+  --cover-ink: #f3fbff;
+  --cover-soft: rgba(243, 251, 255, 0.76);
+  --cover-highlight: #9fe3ff;
+  --cover-button-bg: #f3fbff;
+  --cover-button-ink: #08243a;
+  --cover-button-hover: #061a2b;
+  --featured-surface: rgba(84, 200, 255, 0.12);
+  --shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.48);
+  --page-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.3);
 }
 
 * {
@@ -33,10 +81,11 @@ body {
   padding: clamp(0.75rem, 1.5vw, 1.5rem);
   color: var(--ink);
   background:
-    radial-gradient(circle at 12% 12%, rgba(0, 168, 255, 0.18), transparent 25rem),
-    radial-gradient(circle at 90% 84%, rgba(0, 180, 216, 0.12), transparent 24rem),
-    #071b2b;
+    radial-gradient(circle at 12% 12%, var(--canvas-glow), transparent 25rem),
+    radial-gradient(circle at 90% 84%, var(--canvas-glow-alt), transparent 24rem),
+    var(--canvas);
   font-family: var(--body);
+  transition: background-color 0.35s ease, color 0.35s ease;
 }
 
 button,
@@ -70,6 +119,38 @@ button {
 
 .skip-link:focus {
   transform: translateY(0);
+}
+
+.theme-toggle {
+  position: fixed;
+  top: max(1rem, env(safe-area-inset-top));
+  right: max(1rem, env(safe-area-inset-right));
+  z-index: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 2.35rem;
+  padding: 0.55rem 0.75rem;
+  color: var(--ink);
+  background: var(--toggle-bg);
+  border: 1px solid var(--toggle-border);
+  border-radius: 99px;
+  box-shadow: 0 0.5rem 1.5rem rgba(3, 23, 38, 0.12);
+  cursor: pointer;
+  font-size: 0.66rem;
+  font-weight: 700;
+  transition: color 0.25s ease, background-color 0.35s ease, border-color 0.35s ease, transform 0.25s ease;
+}
+
+.theme-toggle i {
+  color: var(--accent-dark);
+  font-size: 1rem;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+  border-color: var(--accent);
+  transform: translateY(-0.1rem);
 }
 
 .sr-only {
@@ -114,7 +195,7 @@ button {
   justify-content: space-between;
   overflow: hidden;
   padding: 2.2rem 3.3rem 2rem;
-  color: var(--paper);
+  color: var(--cover-ink);
   background:
     radial-gradient(circle at 82% 18%, rgba(0, 180, 216, 0.38), transparent 22rem),
     linear-gradient(145deg, #00b4d8 0%, #0077b6 48%, #005b8f 100%);
@@ -182,7 +263,7 @@ button {
 
 .cover-copy h1 {
   margin-top: 1rem;
-  color: var(--paper);
+  color: var(--cover-ink);
   font-family: var(--heading);
   font-size: clamp(3.5rem, 8vw, 7rem);
   letter-spacing: -0.1em;
@@ -190,7 +271,7 @@ button {
 }
 
 .cover-copy h1 span {
-  color: #b9eaff;
+  color: var(--cover-highlight);
 }
 
 .cover-role {
@@ -206,7 +287,7 @@ button {
 .cover-statement {
   max-width: 27rem;
   margin-top: 1.2rem;
-  color: var(--paper);
+  color: var(--cover-ink);
   font-family: var(--heading);
   font-size: clamp(1.15rem, 2.5vw, 1.8rem);
   letter-spacing: -0.05em;
@@ -220,8 +301,8 @@ button {
   min-height: 2.9rem;
   padding: 0.75rem 1rem;
   margin-top: 2rem;
-  color: var(--ink);
-  background: var(--paper);
+  color: var(--cover-button-ink);
+  background: var(--cover-button-bg);
   border-radius: 0.35rem;
   cursor: pointer;
   font-size: 0.75rem;
@@ -231,8 +312,8 @@ button {
 
 .cover-open:hover,
 .cover-open:focus-visible {
-  color: var(--paper);
-  background: var(--ink);
+  color: var(--cover-ink);
+  background: var(--cover-button-hover);
   transform: translateX(0.2rem);
 }
 
@@ -260,7 +341,7 @@ button {
   height: 100%;
   overflow: hidden;
   padding: 2.4rem 2.75rem 2rem;
-  color: var(--paper);
+  color: var(--cover-ink);
   background:
     radial-gradient(circle at 90% 12%, rgba(0, 180, 216, 0.36), transparent 19rem),
     linear-gradient(145deg, #00b4d8 0%, #0077b6 48%, #005b8f 100%);
@@ -298,7 +379,7 @@ button {
   width: 3.1rem;
   height: 3.1rem;
   place-content: center;
-  color: var(--paper);
+  color: var(--cover-ink);
   border: 1px solid rgba(255, 255, 255, 0.56);
   border-radius: 50%;
   font-family: var(--heading);
@@ -314,12 +395,12 @@ button {
 }
 
 .back-cover-copy .eyebrow {
-  color: rgba(255, 255, 255, 0.74);
+  color: var(--cover-soft);
 }
 
 .back-cover-copy h2 {
   margin-top: 0.8rem;
-  color: var(--paper);
+  color: var(--cover-ink);
   font-family: var(--heading);
   font-size: clamp(2rem, 3.5vw, 3rem);
   letter-spacing: -0.08em;
@@ -327,13 +408,13 @@ button {
 }
 
 .back-cover-copy h2 em {
-  color: #b9eaff;
+  color: var(--cover-highlight);
 }
 
 .back-cover-copy p:last-child {
   max-width: 17rem;
   margin-top: 1rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--cover-soft);
   font-size: 0.78rem;
   line-height: 1.6;
 }
@@ -373,7 +454,7 @@ button {
   overflow: hidden;
   border-radius: 0.8rem 0 0 0.8rem;
   background:
-    linear-gradient(rgba(248, 251, 255, 0.92), rgba(248, 251, 255, 0.92)),
+    linear-gradient(var(--page-wash), var(--page-wash)),
     radial-gradient(circle at 12% 8%, var(--sage), transparent 20rem),
     var(--paper);
 }
@@ -445,7 +526,7 @@ button {
   width: 8rem;
   height: 8rem;
   content: "";
-  background: linear-gradient(135deg, transparent 50%, rgba(203, 232, 247, 0.35) 50%);
+  background: linear-gradient(135deg, transparent 50%, var(--corner-fill) 50%);
   pointer-events: none;
 }
 
@@ -831,7 +912,7 @@ h2 em {
   margin-bottom: 0.62rem;
   border: 1px solid var(--line);
   border-radius: 0.4rem;
-  background: rgba(255, 255, 255, 0.38);
+  background: var(--surface);
   transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -842,7 +923,7 @@ h2 em {
 }
 
 .featured-project {
-  background: rgba(203, 232, 247, 0.42);
+  background: var(--featured-surface);
 }
 
 .project-topline {
@@ -920,7 +1001,7 @@ h2 em {
 .tech-group .content span {
   padding: 0.28rem 0.48rem;
   color: var(--ink-soft);
-  background: rgba(255, 255, 255, 0.56);
+  background: var(--surface-strong);
   border: 1px solid var(--line);
   border-radius: 99px;
   font-size: 0.6rem;
@@ -1201,7 +1282,7 @@ h2 em {
 }
 
 .field::placeholder {
-  color: #70869a;
+  color: var(--field-placeholder);
 }
 
 textarea.field {
@@ -1366,27 +1447,52 @@ textarea.field {
 @media (max-width: 820px) {
   body {
     display: block;
-    padding: 0.8rem;
+    width: 100%;
+    padding: 0;
   }
 
   .wrapper {
-    width: min(40rem, 100%);
+    width: 100%;
     height: auto;
     min-height: 0;
+    margin: 0;
   }
 
   .cover-screen {
     position: fixed;
     inset: 0;
     width: 100%;
-    height: 100%;
-    min-height: 100vh;
-    padding: 2rem 1.25rem;
+    height: 100svh;
+    min-height: 0;
+    padding: max(1.15rem, env(safe-area-inset-top)) max(1.25rem, env(safe-area-inset-right)) max(1.15rem, env(safe-area-inset-bottom)) max(1.25rem, env(safe-area-inset-left));
     border-radius: 0;
+  }
+
+  .cover-copy {
+    max-width: 30rem;
+    margin: clamp(2rem, 10vh, 4.5rem) 0 0;
+  }
+
+  .cover-copy h1 {
+    font-size: clamp(3.1rem, 15vw, 5rem);
+  }
+
+  .cover-role {
+    margin-top: 0.95rem;
+  }
+
+  .cover-statement {
+    margin-top: 0.8rem;
+    font-size: clamp(1rem, 4.8vw, 1.35rem);
+  }
+
+  .cover-open {
+    margin-top: 1.35rem;
   }
 
   .book {
     display: block;
+    width: 100%;
     height: auto;
   }
 
@@ -1398,6 +1504,7 @@ textarea.field {
     left: auto;
     display: block;
     width: 100%;
+    max-width: 100%;
     height: auto;
     min-height: 0;
     margin-bottom: 0.8rem;
@@ -1419,6 +1526,8 @@ textarea.field {
   .book-page .page-back {
     position: relative;
     inset: auto;
+    width: 100%;
+    max-width: 100%;
     min-height: clamp(30rem, calc(100vh - 2rem), 38rem);
     overflow: visible;
     border-radius: 0.65rem;
@@ -1452,6 +1561,21 @@ textarea.field {
 
   .back-profile {
     display: inline-flex;
+  }
+
+  .book-page.page-left.mobile-reveal-target,
+  .book-page.page-right.mobile-reveal-target,
+  .back-cover-page.mobile-reveal-target {
+    opacity: 0;
+    transform: translate3d(0, 2.25rem, 0);
+    transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .book-page.page-left.mobile-reveal-target.is-visible,
+  .book-page.page-right.mobile-reveal-target.is-visible,
+  .back-cover-page.mobile-reveal-target.is-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -1558,5 +1682,36 @@ textarea.field {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+@media (max-width: 360px), (max-height: 620px) and (max-width: 820px) {
+  .theme-toggle {
+    padding: 0.5rem 0.6rem;
+  }
+
+  .theme-toggle span {
+    display: none;
+  }
+
+  .cover-copy {
+    margin-top: 1.6rem;
+  }
+
+  .cover-copy h1 {
+    font-size: clamp(2.8rem, 14vw, 3.7rem);
+  }
+
+  .cover-role {
+    font-size: 0.63rem;
+  }
+
+  .cover-statement {
+    max-width: 18rem;
+    font-size: 1rem;
+  }
+
+  .cover-open {
+    margin-top: 1rem;
   }
 }
