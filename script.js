@@ -117,7 +117,9 @@ function openPortfolio() {
 
   coverScreen.classList.add('is-open');
   coverScreen.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('cover-locked');
   setPageState(pages[0], false, 0);
+  setupMobileReveal();
 }
 
 function returnToCover() {
@@ -143,6 +145,9 @@ function returnToCover() {
       coverScreen.setAttribute('aria-hidden', 'false');
     }
 
+    document.body.classList.add('cover-locked');
+    setupMobileReveal();
+
     isClosingBook = false;
     window.setTimeout(() => openCoverButton?.focus(), reducedMotion ? 0 : 800);
   }, reducedMotion ? 0 : (pages.length - 1) * 280 + 1000);
@@ -156,7 +161,7 @@ if (closeBookButton) {
   closeBookButton.addEventListener('click', returnToCover);
 }
 
-const mediaQuery = window.matchMedia('(max-width: 820px)');
+const mediaQuery = window.matchMedia('(max-width: 1100px) and (orientation: portrait), (max-width: 820px)');
 const mobileRevealTargets = [...document.querySelectorAll('.book-page, .back-cover-page')];
 let mobileRevealObserver;
 
