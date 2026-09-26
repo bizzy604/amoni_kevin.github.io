@@ -13,36 +13,56 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="book.css">
+    <link rel="icon" href="data:,">
 </head>
 
-<body class="cover-locked">
-    <a class="skip-link" href="#portfolio-content">Skip to portfolio content</a>
+<body>
+    <a class="skip-link" href="#book-navigation">Skip to reading controls</a>
+    <header class="reader-header">
+        <a class="reader-brand" href="#" data-book-action="close" aria-label="Amoni Kevin, return to cover"><span class="brand-mark">AK<span>·</span></span><span class="brand-copy">Amoni Kevin<small>The portfolio / Vol. 01</small></span></a>
+        <div class="reader-tools">
+            <details class="chapter-menu"><summary aria-label="Table of contents"><span aria-hidden="true">☷</span><span class="tool-label">Contents</span></summary><nav class="chapter-list" aria-label="Chapters"><p class="eyebrow">Inside this book</p>
+                        <button type="button" data-chapter="1"><span>01</span>Profile</button>
+                        <button type="button" data-chapter="2"><span>02</span>About</button>
+                        <button type="button" data-chapter="3"><span>03</span>Current builds</button>
+                        <button type="button" data-chapter="4"><span>04</span>Experience</button>
+                        <button type="button" data-chapter="5"><span>05</span>Education</button>
+                        <button type="button" data-chapter="6"><span>06</span>Selected projects</button>
+                        <button type="button" data-chapter="7"><span>07</span>Technical skills</button>
+                        <button type="button" data-chapter="8"><span>08</span>Achievements</button>
+                        <button type="button" data-chapter="9"><span>09</span>Contact</button>
+                        <button type="button" data-chapter="10"><span>10</span>The next chapter</button>
+            </nav></details>
+            <button type="button" class="reader-tool sound-toggle" aria-pressed="true" aria-label="Mute book sounds"><i class="bx bx-volume-full" aria-hidden="true"></i><span class="tool-label">Sound on</span></button>
+            <button type="button" class="reader-tool theme-toggle" aria-pressed="false" aria-label="Switch to dark theme"><i class="bx bx-moon" aria-hidden="true"></i><span class="tool-label">Dark mode</span></button>
+        </div>
+    </header>
+    <main class="reading-room" id="portfolio-content">
+        <p class="shelf-caption"><span></span> A few pages about what I build, and why <span></span></p>
+        <div class="book-stage">
+            <div class="book-position" data-position="front">
+                <div class="book" id="portfolio-book" aria-label="Interactive portfolio book">
 
-    <main class="wrapper" id="portfolio-content">
-        <section class="cover-screen" id="cover-screen" aria-label="Portfolio cover">
-            <div class="cover-corner">AK</div>
-            <button type="button" class="theme-toggle" aria-pressed="false" aria-label="Switch to dark theme">
-                <i class="bx bx-moon" aria-hidden="true"></i>
-                <span>Dark mode</span>
-            </button>
-            <div class="cover-copy">
-                <p class="eyebrow cover-eyebrow">Amoni Erot Kevin / Portfolio</p>
-                <h1>Amoni <span>Kevin</span></h1>
-                <p class="cover-role">Software Engineer / AI Engineer</p>
-                <p class="cover-statement">Building useful, dependable technology for the real world.</p>
-                <button type="button" class="cover-open">Open portfolio <i class="bx bx-right-arrow-alt" aria-hidden="true"></i></button>
-            </div>
-            <div class="cover-footer"><span>Nairobi, Kenya</span><span>2026 / Edition 01</span></div>
-        </section>
-
-        <div class="book" aria-label="Portfolio pages">
-            <section class="book-page page-left" aria-label="Profile">
-                <div class="profile-page">
-                    <div class="profile-topline">
+                <section class="leaf book-cover front-cover" data-density="hard" data-title="Front cover" aria-label="Front cover">
+                    <div class="cover-border" aria-hidden="true"></div>
+                    <div class="cover-spine" aria-hidden="true">AMONI KEVIN &nbsp; / &nbsp; SELECTED WORK</div>
+                    <div class="cover-content">
+                        <div class="cover-edition"><span>A personal portfolio</span><span>Vol. 01 / 2026</span></div>
+                        <div class="cover-title"><p class="cover-kicker">The work &amp; the story of</p><h1>Amoni<br><em>Kevin.</em></h1><p class="cover-role">Software &amp; AI Engineer</p></div>
+                        <div class="cover-emblem" aria-hidden="true"><span class="emblem-orbit"></span><span class="emblem-initials">AK</span><span class="emblem-star">✦</span></div>
+                        <p class="cover-motto">Systems for the real world.</p>
+                        <button type="button" class="cover-open" data-book-action="open">Open the book <span aria-hidden="true">↗</span></button>
+                        <div class="cover-bottom"><span>Nairobi, Kenya</span><span>Engineering with intent</span></div>
+                    </div>
+                </section>
+                <section class="leaf paper-page" data-title="Profile" aria-label="Profile, page 1" id="chapter-1">
+                    <div class="page-running-head"><span>Amoni Kevin</span><span>Profile</span></div>
+                    <div class="page-content" tabindex="-1" aria-label="Read profile"><div class="profile-page"><div class="profile-topline">
                         <span class="eyebrow">Portfolio / 2026</span>
                         <span class="availability"><span class="availability-dot"></span> Open to select work</span>
                     </div>
@@ -55,8 +75,8 @@
 
                     <div class="profile-copy">
                         <p class="eyebrow accent-text">Software engineer / AI Engineer</p>
-                        <h1>Amoni <span>Kevin</span></h1>
-                        <h2>Systems for the<br><em>real world.</em></h2>
+                        <h2 class="profile-name">Amoni <span>Kevin</span></h2>
+                        <h2>Systems for the <em>real world.</em></h2>
                         <p class="profile-intro">I help African founders and organizations build AI-powered products that generate real business value.
 
                         I help them achieve that without the painful cycle of expensive prototypes that never survive contact with production.
@@ -80,16 +100,12 @@
                         <a href="#contact" class="btn btn-ghost contact-me">Start a conversation <i class="bx bx-up-arrow-alt" aria-hidden="true"></i></a>
                     </div>
 
-                    <div class="profile-footer">
-                        <span>01 / 08</span>
-                        <span>Build with intent <i class="bx bx-right-arrow-alt" aria-hidden="true"></i></span>
-                    </div>
-                </div>
-            </section>
-
-            <section class="book-page page-right" id="turn-1" aria-label="About and current builds">
-                <div class="page-front">
-                    <div class="page-heading">
+                    </div></div>
+                    <footer class="page-folio"><span>Selected work / 2026</span><span>01</span></footer>
+                </section>
+                <section class="leaf paper-page" data-title="About" aria-label="About, page 2" id="chapter-2">
+                    <div class="page-running-head"><span>Amoni Kevin</span><span>About</span></div>
+                    <div class="page-content" tabindex="-1" aria-label="Read about"><div class="page-heading">
                         <p class="eyebrow">01 - About</p>
                         <h2>About <em>me.</em></h2>
                     </div>
@@ -111,13 +127,12 @@
                         <div><i class="bx bx-check" aria-hidden="true"></i><span><strong>Stay close to the user</strong> - technical decisions should improve the real workflow.</span></div>
                     </div>
 
-                    <div class="page-note">English / Swahili / Turkana</div>
-                    <span class="number-page">1</span>
-                    <button class="nextprev-btn" type="button" data-page="turn-1" data-direction="next" aria-label="Next page"><i class="bx bx-right-arrow-alt" aria-hidden="true"></i></button>
-                </div>
-
-                <div class="page-back">
-                    <div class="page-heading compact-heading">
+                    <div class="page-note">English / Swahili / Turkana</div></div>
+                    <footer class="page-folio"><span>Selected work / 2026</span><span>02</span></footer>
+                </section>
+                <section class="leaf paper-page" data-title="Current builds" aria-label="Current builds, page 3" id="chapter-3">
+                    <div class="page-running-head"><span>Amoni Kevin</span><span>Current builds</span></div>
+                    <div class="page-content" tabindex="-1" aria-label="Read current builds"><div class="page-heading compact-heading">
                         <p class="eyebrow">02 - Current Builds</p>
                         <h2>Current <em>builds.</em></h2>
                     </div>
@@ -148,16 +163,12 @@
                         <h3>PataSpace</h3>
                         <p>House-hunting application that helps people discover, compare, and choose homes while saving 80% of their search time.</p>
                         <div class="tag-row"><span>Marketplace</span><span>React</span><span>NestJS</span><span>Product design</span></div>
-                    </article>
-
-                    <span class="number-page">2</span>
-                    <button class="nextprev-btn back" type="button" data-page="turn-1" data-direction="previous" aria-label="Previous page"><i class="bx bx-left-arrow-alt" aria-hidden="true"></i></button>
-                </div>
-            </section>
-
-            <section class="book-page page-right" id="turn-2" aria-label="Experience and education">
-                <div class="page-front">
-                    <div class="page-heading compact-heading">
+                    </article></div>
+                    <footer class="page-folio"><span>Selected work / 2026</span><span>03</span></footer>
+                </section>
+                <section class="leaf paper-page" data-title="Experience" aria-label="Experience, page 4" id="chapter-4">
+                    <div class="page-running-head"><span>Amoni Kevin</span><span>Experience</span></div>
+                    <div class="page-content" tabindex="-1" aria-label="Read experience"><div class="page-heading compact-heading">
                         <p class="eyebrow">03 - Experience</p>
                         <h2>Experience</h2>
                     </div>
@@ -187,14 +198,12 @@
                             <span class="timeline-year">Jun 2020 - Dec 2022</span>
                             <div><h3>Software Developer <span>/ Turkana County Government</span></h3><p>Automated reporting and planning workflows supporting 500,000+ residents and helped turn programme data into better budget decisions.</p></div>
                         </article>
-                    </div>
-
-                    <span class="number-page">3</span>
-                    <button class="nextprev-btn" type="button" data-page="turn-2" data-direction="next" aria-label="Next page"><i class="bx bx-right-arrow-alt" aria-hidden="true"></i></button>
-                </div>
-
-                <div class="page-back">
-                    <div class="page-heading compact-heading">
+                    </div></div>
+                    <footer class="page-folio"><span>Selected work / 2026</span><span>04</span></footer>
+                </section>
+                <section class="leaf paper-page" data-title="Education" aria-label="Education, page 5" id="chapter-5">
+                    <div class="page-running-head"><span>Amoni Kevin</span><span>Education</span></div>
+                    <div class="page-content" tabindex="-1" aria-label="Read education"><div class="page-heading compact-heading">
                         <p class="eyebrow">04 - Education</p>
                         <h2>Education</h2>
                     </div>
@@ -205,16 +214,12 @@
                         <article class="education-item"><span class="education-year">2023 - 2024</span><div><h3>Data Science Fellow</h3><p>ALX Africa</p><small>Machine learning, advanced statistics, and cloud fundamentals on AWS.</small></div></article>
                     </div>
 
-                    <div class="quote-card"><i class="bx bxs-quote-alt-left" aria-hidden="true"></i><p>Make the complex feel clear. Make the important feel reliable.</p></div>
-
-                    <span class="number-page">4</span>
-                    <button class="nextprev-btn back" type="button" data-page="turn-2" data-direction="previous" aria-label="Previous page"><i class="bx bx-left-arrow-alt" aria-hidden="true"></i></button>
-                </div>
-            </section>
-
-            <section class="book-page page-right" id="turn-3" aria-label="Projects and technical skills">
-                <div class="page-front">
-                    <div class="page-heading compact-heading">
+                    <div class="quote-card"><i class="bx bxs-quote-alt-left" aria-hidden="true"></i><p>Make the complex feel clear. Make the important feel reliable.</p></div></div>
+                    <footer class="page-folio"><span>Selected work / 2026</span><span>05</span></footer>
+                </section>
+                <section class="leaf paper-page" data-title="Selected projects" aria-label="Selected projects, page 6" id="chapter-6">
+                    <div class="page-running-head"><span>Amoni Kevin</span><span>Selected projects</span></div>
+                    <div class="page-content" tabindex="-1" aria-label="Read selected projects"><div class="page-heading compact-heading">
                         <p class="eyebrow">05 - Selected Projects</p>
                         <h2>Selected <em>projects.</em></h2>
                     </div>
@@ -238,14 +243,12 @@
                         <h3>PataSpace <span>/ house hunting</span></h3>
                         <p>Designed a focused home-discovery experience that helps house hunters search, compare, and move toward a housing decision more efficiently.</p>
                         <strong class="metric">80% <small>search time saved for house hunters</small></strong>
-                    </article>
-
-                    <span class="number-page">5</span>
-                    <button class="nextprev-btn" type="button" data-page="turn-3" data-direction="next" aria-label="Next page"><i class="bx bx-right-arrow-alt" aria-hidden="true"></i></button>
-                </div>
-
-                <div class="page-back">
-                    <div class="page-heading compact-heading">
+                    </article></div>
+                    <footer class="page-folio"><span>Selected work / 2026</span><span>06</span></footer>
+                </section>
+                <section class="leaf paper-page" data-title="Technical skills" aria-label="Technical skills, page 7" id="chapter-7">
+                    <div class="page-running-head"><span>Amoni Kevin</span><span>Technical skills</span></div>
+                    <div class="page-content" tabindex="-1" aria-label="Read technical skills"><div class="page-heading compact-heading">
                         <p class="eyebrow">06 - Technical Skills</p>
                         <h2>Technical <em>skills.</em></h2>
                     </div>
@@ -258,15 +261,12 @@
                         <div class="tech-group"><h3>Reliability</h3><div class="content"><span><i class="bx bx-shield-quarter" aria-hidden="true"></i>OAuth 2.0</span><span><i class="bx bx-lock-alt" aria-hidden="true"></i>RBAC</span><span><i class="devicon-prometheus-original colored" aria-hidden="true"></i>Prometheus</span><span><i class="devicon-grafana-plain colored" aria-hidden="true"></i>Grafana</span><span><i class="devicon-swagger-plain colored" aria-hidden="true"></i>OpenAPI</span></div></div>
                     </div>
 
-                    <div class="skills-footer">Architecture / security / observability / delivery</div>
-                    <span class="number-page">6</span>
-                    <button class="nextprev-btn back" type="button" data-page="turn-3" data-direction="previous" aria-label="Previous page"><i class="bx bx-left-arrow-alt" aria-hidden="true"></i></button>
-                </div>
-            </section>
-
-            <section class="book-page page-right" id="turn-4" aria-label="Achievements and contact">
-                <div class="page-front">
-                    <div class="page-heading compact-heading">
+                    <div class="skills-footer">Architecture / security / observability / delivery</div></div>
+                    <footer class="page-folio"><span>Selected work / 2026</span><span>07</span></footer>
+                </section>
+                <section class="leaf paper-page" data-title="Achievements" aria-label="Achievements, page 8" id="chapter-8">
+                    <div class="page-running-head"><span>Amoni Kevin</span><span>Achievements</span></div>
+                    <div class="page-content" tabindex="-1" aria-label="Read achievements"><div class="page-heading compact-heading">
                         <p class="eyebrow">07 - Achievements</p>
                         <h2>Achievements</h2>
                     </div>
@@ -277,14 +277,12 @@
                         <div><span class="achievement-number">03</span><p><strong>99.2% platform uptime</strong> for a government service used by 10,000+ people after introducing Prometheus and Grafana observability.</p></div>
                         <div><span class="achievement-number">04</span><p><strong>40% less manual data processing</strong> through Python ETL pipelines that removed about 14 hours of operations work each week.</p></div>
                         <div><span class="achievement-number">05</span><p><strong>KES 2 million budget reallocation influenced</strong> through three years of data-driven county programme analysis.</p></div>
-                    </div>
-
-                    <span class="number-page">7</span>
-                    <button class="nextprev-btn" type="button" data-page="turn-4" data-direction="next" aria-label="Next page"><i class="bx bx-right-arrow-alt" aria-hidden="true"></i></button>
-                </div>
-
-                <div class="page-back" id="contact">
-                    <div class="page-heading compact-heading">
+                    </div></div>
+                    <footer class="page-folio"><span>Selected work / 2026</span><span>08</span></footer>
+                </section>
+                <section class="leaf paper-page" data-title="Contact" aria-label="Contact, page 9" id="contact">
+                    <div class="page-running-head"><span>Amoni Kevin</span><span>Contact</span></div>
+                    <div class="page-content" tabindex="-1" aria-label="Read contact"><div class="page-heading compact-heading">
                         <p class="eyebrow">08 - Contact</p>
                         <h2>Contact <em>me.</em></h2>
                     </div>
@@ -307,27 +305,32 @@
                             <textarea id="message" name="message" class="field" placeholder="What are you working on?" required></textarea>
                             <button type="submit" class="btn">Open email draft <i class="bx bx-send" aria-hidden="true"></i></button>
                         </form>
-                    </div>
-
-                    <span class="number-page">8</span>
-                    <button class="nextprev-btn back" type="button" data-page="turn-4" data-direction="previous" aria-label="Previous page"><i class="bx bx-left-arrow-alt" aria-hidden="true"></i></button>
-                    <button type="button" class="back-profile" aria-label="Return to cover"><span>Close book</span><i class="bx bx-book-open" aria-hidden="true"></i></button>
+                    </div></div>
+                    <footer class="page-folio"><span>Selected work / 2026</span><span>09</span></footer>
+                </section>
+                <section class="leaf paper-page" data-title="The next chapter" aria-label="The next chapter, page 10" id="chapter-10">
+                    <div class="page-running-head"><span>Amoni Kevin</span><span>The next chapter</span></div>
+                    <div class="page-content" tabindex="-1" aria-label="Read the next chapter"><div class="closing-note"><p class="eyebrow">The next chapter</p><span class="closing-star" aria-hidden="true">✦</span><h2>Good things<br>begin with<br><em>a conversation.</em></h2><p>Have something worth building?<br>Let’s make it real.</p><a class="btn" href="mailto:kevinamoni20@gmail.com">Say hello <span aria-hidden="true">↗</span></a><a class="closing-cv" href="Amoni_Kevin_Software_Engineering.pdf" download>Take a copy of my CV <span aria-hidden="true">↓</span></a><p class="colophon-signature">Amoni Kevin</p><p class="eyebrow">Nairobi · Kenya · 2026</p></div></div>
+                    <footer class="page-folio"><span>Selected work / 2026</span><span>10</span></footer>
+                </section>
+                <section class="leaf book-cover back-cover" data-density="hard" data-title="Back cover" aria-label="Back cover">
+                    <div class="cover-border" aria-hidden="true"></div>
+                    <div class="back-cover-content"><p class="cover-kicker">Until the next chapter</p><div class="back-monogram" aria-hidden="true">AK</div><h2>Thank you<br><em>for reading.</em></h2><p>Good systems make<br>meaningful work possible.</p><button class="cover-open" type="button" data-book-action="close">Return to the cover <span aria-hidden="true">↶</span></button><div class="cover-bottom"><span>Amoni Erot Kevin</span><span>Nairobi, Kenya</span></div></div>
+                </section>
                 </div>
-            </section>
-
-            <section class="back-cover-page" aria-label="Back cover">
-                <div class="back-cover-mark">AK</div>
-                <div class="back-cover-copy">
-                    <p class="eyebrow">Back cover</p>
-                    <h2>Thank you<br><em>for reading.</em></h2>
-                    <p>Good systems make meaningful work possible.</p>
-                </div>
-                <div class="back-cover-footer"><span>Amoni Erot Kevin</span><span>amoni-kevin.vercel.app</span></div>
-            </section>
+            </div>
         </div>
+        <nav class="book-navigation" id="book-navigation" aria-label="Book navigation">
+            <button class="nav-button previous-page" type="button" aria-label="Previous page"><span aria-hidden="true">←</span><span class="nav-label">Previous</span></button>
+            <div class="reading-progress"><p class="current-chapter">Front cover</p><p class="page-count">Amoni Kevin / Selected work</p><div class="progress-track" aria-hidden="true"><span></span></div></div>
+            <button class="nav-button next-page" type="button" aria-label="Open book"><span class="nav-label">Open book</span><span aria-hidden="true">→</span></button>
+        </nav>
+        <p class="reader-hint"><span class="gesture-hint">Drag a corner or use the arrows to turn a page</span><span class="hint-divider">·</span><button type="button" class="reading-mode-toggle" aria-pressed="false">Read as a page</button></p>
+        <p class="sr-only" role="status" aria-live="polite" aria-atomic="true" id="reading-announcement"></p>
     </main>
-
+    <footer class="reader-footer"><span>Thoughtfully built. Intentionally shared.</span><button type="button" data-book-action="close">Close book <span aria-hidden="true">↗</span></button><span>Nairobi, KE <span class="footer-star" aria-hidden="true">✦</span> 2026</span></footer>
+    <script src="vendor/page-flip.browser.js"></script>
+    <script src="book-layout.js"></script>
     <script src="script.js"></script>
 </body>
-
 </html>

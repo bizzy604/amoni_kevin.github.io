@@ -2,6 +2,28 @@
 
 Software engineer and product builder based in Nairobi, Kenya. I design and ship secure, dependable systems for teams solving meaningful problems across Africa.
 
+## Run the portfolio locally
+
+This is a static website; no build or package installation is needed. From this directory, run:
+
+```sh
+python -m http.server 4173
+```
+
+Then open `http://localhost:4173`.
+
+### Reading the book
+
+- Open the cover, drag a page corner, swipe on a phone, or use the navigation arrows.
+- Keyboard controls: left/right arrows turn pages; Home returns to the cover; End opens the back cover. These shortcuts leave form fields alone.
+- Contents jumps to a chapter. Longer chapters continue on additional sheets, so every page is fully visible without internal scrolling. Page count adjusts to the window size.
+- Sound and theme controls remember the reader's preferences locally. Paper rustles and binding sounds are synthesized with Web Audio after user interaction; no audio files or requests are needed.
+- Reduced-motion preferences use immediate page changes. “Read as a page” provides a continuous reading view. The content also remains readable without JavaScript.
+
+`index.html` holds the book's content, `style.css` the portfolio components, `book.css` the reading room and book presentation, `book-layout.js` measures and paginates the chapters, and `script.js` handles navigation, accessibility, and audio. Resizing preserves the current chapter and form values.
+
+Page folding uses the locally vendored [StPageFlip 2.0.7](https://github.com/Nodlik/StPageFlip) engine. Its MIT license is included in `vendor/page-flip.LICENSE`. Fonts and icon stylesheets continue to load from their existing external providers.
+
 [![Portfolio](https://img.shields.io/badge/Portfolio-amoni.vercel.app-00a8ff?style=for-the-badge)](https://amoni.vercel.app/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-amoni--kevin-142321?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/amoni-kevin)
 [![Email](https://img.shields.io/badge/Email-kevinamoni20%40gmail.com-00a8ff?style=for-the-badge&logo=gmail&logoColor=white)](mailto:kevinamoni20@gmail.com)
