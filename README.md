@@ -65,14 +65,14 @@ House-hunting application designed to make finding a home faster and easier. Pat
 
 ## Technical toolkit
 
-| Area | Tools |
-| --- | --- |
-| Frontend | React, Next.js, TypeScript, Tailwind CSS |
-| Backend | Node.js, NestJS, Express.js, Python, FastAPI |
-| Data and AI | PostgreSQL, MySQL, Redis, dbt, Pandas, LLM workflows |
-| Cloud and delivery | Docker, Kubernetes, AWS, GCP, Terraform, GitHub Actions |
-| Reliability and security | Prometheus, Grafana, OpenAPI, OAuth 2.0, JWT, RBAC |
-| Integrations | M-Pesa Daraja, Flutterwave, Africa's Talking, webhooks |
+| Area                     | Tools                                                   |
+| ------------------------ | ------------------------------------------------------- |
+| Frontend                 | React, Next.js, TypeScript, Tailwind CSS                |
+| Backend                  | Node.js, NestJS, Express.js, Python, FastAPI            |
+| Data and AI              | PostgreSQL, MySQL, Redis, dbt, Pandas, LLM workflows    |
+| Cloud and delivery       | Docker, Kubernetes, AWS, GCP, Terraform, GitHub Actions |
+| Reliability and security | Prometheus, Grafana, OpenAPI, OAuth 2.0, JWT, RBAC      |
+| Integrations             | M-Pesa Daraja, Flutterwave, Africa's Talking, webhooks  |
 
 ## Experience at a glance
 
